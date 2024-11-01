@@ -132,4 +132,10 @@
   <data name="PasswordInvalid" xml:space="preserve">
     <value>Senha inválida, deve conter no mínimo 8 caracteres, sendo pelo menos uma letra minúscula, uma letra maiúscula, um dígito, um caractere especial</value>
   </data>
+  <data name="FeedMessageNotEpty" xml:space="preserve">
+    <value>Mensagem do feed não pode ser vazia</value>
+  </data>
+  <data name="FeedIdPersonNotNull" xml:space="preserve">
+    <value>IdPerson deve ser maior que 0</value>
+  </data>
 </root>

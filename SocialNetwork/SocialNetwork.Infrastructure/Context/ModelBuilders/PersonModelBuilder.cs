@@ -7,7 +7,7 @@ namespace SocialNetwork.Infrastructure.Context.ModelBuilders
     {
         public static void Builder(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Person>(e =>
+            modelBuilder.Entity<PersonEntity>(e =>
             {
                 e.HasKey(e => e.Id);
                 e.Property(e => e.Name).IsRequired().HasMaxLength(120);

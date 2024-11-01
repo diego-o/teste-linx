@@ -3,19 +3,18 @@ using System.Text.RegularExpressions;
 
 namespace SocialNetwork.Domain.Entities
 {
-    public class Person
-    {
-        public int Id { get; private set; }
+    public class PersonEntity : EntityBase
+    {   
         public string Name { get; private set; }
         public string Email { get; set; }
         public DateTime Birth { get; private set; }
         public string Password { get; private set; }
 
-        public List<PersonFeed> Feeds { get; set; }
+        public List<PersonFeedEntity> Feeds { get; set; }
 
-        public Person() { }
+        public PersonEntity() { }
 
-        public Person(string nome, string email, DateTime birth, string password)
+        public PersonEntity(string nome, string email, DateTime birth, string password)
         {
             Name = nome;
             Email = email;

@@ -79,6 +79,24 @@ namespace SocialNetwork.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to IdPerson deve ser maior que 0.
+        /// </summary>
+        public static string FeedIdPersonNotNull {
+            get {
+                return ResourceManager.GetString("FeedIdPersonNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mensagem do feed não pode ser vazia.
+        /// </summary>
+        public static string FeedMessageNotEpty {
+            get {
+                return ResourceManager.GetString("FeedMessageNotEpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Data de nascimento invalida, pessoa com mais de 150 anos.
         /// </summary>
         public static string OlderThan {

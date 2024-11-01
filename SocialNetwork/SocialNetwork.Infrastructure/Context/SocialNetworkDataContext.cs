@@ -7,10 +7,14 @@ namespace SocialNetwork.Infrastructure.Context
 {
     public class SocialNetworkDataContext : DbContext, ISocialNetworkDataContext
     {
-        public SocialNetworkDataContext(DbContextOptions<SocialNetworkDataContext> options) : base(options) { }
+        public SocialNetworkDataContext(DbContextOptions<SocialNetworkDataContext> options) : base(options) 
+        {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
+        }
 
-        public DbSet<Person> Persons { get; set; }
-        public DbSet<PersonFeed> Feeds { get; set; }
+        public DbSet<PersonEntity> Persons { get; set; }
+        public DbSet<PersonFeedEntity> Feeds { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -21,4 +25,3 @@ namespace SocialNetwork.Infrastructure.Context
         }
     }
 }
-

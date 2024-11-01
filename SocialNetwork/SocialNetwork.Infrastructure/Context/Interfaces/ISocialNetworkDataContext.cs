@@ -3,9 +3,9 @@ using SocialNetwork.Domain.Entities;
 
 namespace SocialNetwork.Infrastructure.Context.Interfaces
 {
-    public interface ISocialNetworkDataContext
+    public interface ISocialNetworkDataContext : IDbContext
     {
-        DbSet<Person> Persons { get; set; }
-        DbSet<PersonFeed> Feeds { get; set; }
+        DbSet<PersonEntity> Persons { get; set; }
+        DbSet<PersonFeedEntity> Feeds { get; set; }
     }
 }

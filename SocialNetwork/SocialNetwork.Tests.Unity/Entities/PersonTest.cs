@@ -9,7 +9,7 @@ namespace SocialNetwork.Tests.Unity.Entities
         public void Create_Person_Sucess() 
         {
             //Arrange & Act
-            var newPerson = new Person("Diego de Souza", "diego_1souza@hotmail.com", Convert.ToDateTime("1992-03-10"), "Diego@123");
+            var newPerson = new PersonEntity("Diego de Souza", "diego_1souza@hotmail.com", Convert.ToDateTime("1992-03-10"), "Diego@123");
 
             //Assert
             Assert.NotNull(newPerson);
@@ -22,7 +22,7 @@ namespace SocialNetwork.Tests.Unity.Entities
         public void Name_Not_Empty()
         {
             //Arrange && Act
-            var exception = Record.Exception(() => new Person(string.Empty, "diego_1souza@hotmail.com", Convert.ToDateTime("1992-10-03"), ""));
+            var exception = Record.Exception(() => new PersonEntity(string.Empty, "diego_1souza@hotmail.com", Convert.ToDateTime("1992-10-03"), ""));
 
             //Assert
             Assert.Equal(exception.Message, DomainValidationsResource.PersonNameEmpty);
@@ -32,7 +32,7 @@ namespace SocialNetwork.Tests.Unity.Entities
         public void Email_Invalid()
         {
             //Arrange && Act
-            var exception = Record.Exception(() => new Person("Diego", "diego_1souza", Convert.ToDateTime("1992-10-03"), ""));
+            var exception = Record.Exception(() => new PersonEntity("Diego", "diego_1souza", Convert.ToDateTime("1992-10-03"), ""));
 
             //Assert
             Assert.Equal(exception.Message, DomainValidationsResource.EmailInvalid);
@@ -44,7 +44,7 @@ namespace SocialNetwork.Tests.Unity.Entities
         public void Validate_Birth_Invalid(string date, string messageValidation)
         {
             //Arrange && Act
-            var exception = Record.Exception(() => new Person("Diego", "diego_1souza@hotmail.com", Convert.ToDateTime(date), ""));
+            var exception = Record.Exception(() => new PersonEntity("Diego", "diego_1souza@hotmail.com", Convert.ToDateTime(date), ""));
 
             //Assert
             Assert.Equal(exception.Message, messageValidation);
@@ -54,7 +54,7 @@ namespace SocialNetwork.Tests.Unity.Entities
         public void Validate_Password()
         {
             //Arrange & Act
-            var exception = Record.Exception(() => new Person("Diego", "diego_1souza@hotmail.com", Convert.ToDateTime("1992-03-10"), "123abc"));
+            var exception = Record.Exception(() => new PersonEntity("Diego", "diego_1souza@hotmail.com", Convert.ToDateTime("1992-03-10"), "123abc"));
 
             //Assert
             Assert.Equal(exception.Message, DomainValidationsResource.PasswordInvalid);
